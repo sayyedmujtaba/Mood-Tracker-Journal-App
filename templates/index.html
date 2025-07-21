@@ -1,20 +1,26 @@
+<!-- 
+  This is the main landing page for the Mood Tracker Journal App.
+  It provides a welcome message and navigation to other pages.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mood Journal</title>
+    <title>Mood Tracker Home</title>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
+    <!-- Main container for the home page content -->
     <div class="container">
-        <header>
-            <h1>Welcome to Mood Journal</h1>
-        </header>
-        <nav class="nav-links">
-            <a href="/about">About</a>
-            <a href="/add-mood">Add Mood</a>
-            <a href="/moods">View Moods History</a>
+        <h1>Welcome to Your Mood Tracker Journal</h1>
+        <p>Your personal space to reflect and grow.</p>
+        
+        <!-- Navigation links to other sections of the app -->
+        <nav>
+            <a href="{{ url_for('add_mood') }}">Add a New Mood</a>
+            <a href="{{ url_for('show_moods') }}">View Your Moods</a>
+            <a href="{{ url_for('about') }}">About This App</a>
         </nav>
     </div>
 

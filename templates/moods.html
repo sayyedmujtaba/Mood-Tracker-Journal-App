@@ -1,28 +1,33 @@
+<!-- 
+  This page displays the list of moods that the user has submitted.
+  It iterates over the 'moods' list passed from the Flask app.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Mood History</title>
+    <title>My Moods - Mood Tracker</title>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
+    <!-- Main container for displaying the list of moods -->
     <div class="container">
-        <header>
-            <h1>Your Mood History</h1>
-        </header>
-        <ul class="mood-list">
+        <h1>Your Mood History</h1>
+        <!-- List of submitted moods -->
+        <ul>
+            <!-- 
+              Loop through each mood in the 'moods' list.
+              If the list is empty, the 'else' block will be rendered.
+            -->
             {% for mood in moods %}
                 <li>{{ mood }}</li>
+            {% else %}
+                <li>You haven't added any moods yet.</li>
             {% endfor %}
         </ul>
-    </div>
-    <div class="container">
-        
-        <nav class="nav-links">
-            <a href="/">Home</a>
-            <a href="/add-mood">Enter another mood</a>
-        </nav>
+        <!-- Link to add a new mood -->
+        <a href="{{ url_for('add_mood') }}">Add a New Mood</a>
     </div>
 </body>
 </html>

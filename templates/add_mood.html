@@ -1,20 +1,24 @@
+<!-- 
+  This page contains the form for adding a new mood entry.
+  Users can select their mood and submit it to the application.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Mood</title>
+    <title>Add Mood - Mood Tracker</title>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
+    <!-- Main container for the add mood form -->
     <div class="container">
-        <header>
-            <h1>Record Your Mood</h1>
-        </header>
-        <form method="POST">
-            <label>Your Mood Today</label>
-            <input type="text" name="mood" placeholder="How are you feeling today?">
-            <button type="submit">Submit</button>
+        <h1>How are you feeling today?</h1>
+        <!-- Form to submit a new mood -->
+        <form action="{{ url_for('add_mood') }}" method="post">
+            <label for="mood">Select your mood:</label>
+            <input type="text" id="mood" name="mood" required>
+            <button type="submit">Add Mood</button>
         </form>
     </div>
 </body>

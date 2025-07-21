@@ -1,19 +1,22 @@
+<!-- 
+  This page provides information about the Mood Tracker Journal App.
+  It includes a brief description of the application's purpose and functionality.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>About - Mood Tracker</title>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 <body>
+    <!-- Main container for the about page content -->
     <div class="container">
-        <header>
-            <h1>About Mood Journal</h1>
-        </header>
-        <div class="about-content">
-            <p>This is a simple mood tracking application to help you record and reflect on your daily emotions.</p>
-        </div>
+        <h1>About the Mood Tracker Journal</h1>
+        <p>This application helps you track your daily moods and journal your thoughts.</p>
+        <!-- Link back to the home page -->
+        <a href="{{ url_for('home') }}">Back to Home</a>
     </div>
 </body>
 </html>
